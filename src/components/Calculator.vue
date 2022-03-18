@@ -11,6 +11,7 @@
       이에 자세한 사항은 의사 혹은 전문 의료진과의 상담을 추천합니다.
     </p>
   </div>
+  <Result v-if="bmiShow" />
   <ul class="calculator">
     <li>
       신장 <input
@@ -34,7 +35,13 @@
 </template>
 
 <script>
+import Result from '@/components/Result.vue'
+import { mapState } from 'vuex'
+
 export default {
+  components: {
+    Result
+  },
   data() {
     return {
       height: '',
@@ -42,6 +49,9 @@ export default {
     }
   },
   computed: {
+    ...mapState('bmi', [
+      'bmiShow',
+    ]),
     date() {
       return new Date()
     }

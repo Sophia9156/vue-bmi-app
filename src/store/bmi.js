@@ -4,7 +4,8 @@ export default {
     height: '',
     weight: '',
     bmi: '',
-    date: ''
+    date: '',
+    bmiShow: false
   }),
   mutations: {
     updateState(prevState, newState) {
@@ -23,12 +24,13 @@ export default {
         window.alert('몸무게를 입력해주세요.')
         return
       } else {
-        const bmi = Math.round(weight / (height * height) * 10000)
+        const bmi = Math.round(weight / (height * height) * 10000, 1)
         commit('updateState', {
           height,
           weight,
           bmi,
-          date
+          date,
+          bmiShow: true
         })
       }
     }
