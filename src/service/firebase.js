@@ -3,12 +3,10 @@ import { getDatabase } from "firebase/database";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyADBZzKfwD1HO_5J1DdHofgtoa_tAAAobc",
-  authDomain: "vue-bmi-app.firebaseapp.com",
-  projectId: "vue-bmi-app",
-  storageBucket: "vue-bmi-app.appspot.com",
-  messagingSenderId: "15897707091",
-  appId: "1:15897707091:web:1f64107695adebfe50fca6"
+  apiKey: process.env.VUE_APP_API_KEY,
+  authDomain: process.env.VUE_APP_AUTH_DOMAIN,
+  projectId: process.env.VUE_APP_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_STORAGE_BUCKET,
 };
 
 // Initialize Firebase
