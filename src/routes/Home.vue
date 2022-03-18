@@ -1,13 +1,19 @@
 <template>
   <Header />
+  <Calculator />
+  <Result />
 </template>
 
 <script>
-import Header from '../components/Header.vue'
+import Calculator from '@/components/Calculator.vue'
+import Header from '@/components/Header.vue'
+import Result from '@/components/Result.vue'
 
 export default {
   components: {
-    Header
+    Header,
+    Calculator,
+    Result
   },
 }
 </script>
