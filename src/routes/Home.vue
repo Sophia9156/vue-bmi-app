@@ -1,26 +1,13 @@
 <template>
-  <button @click="logout">Logout</button>
-  <div>{{user}}</div>
+  <Header />
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import Header from '../components/Header.vue'
+
 export default {
-  name: "main",
-  computed: {
-    ...mapState('login', [
-      'user'
-    ])
+  components: {
+    Header
   },
-  methods: {
-    async logout() {
-      try {
-        await this.$store.dispatch('login/logout')
-        this.$router.push('/')
-      } catch {
-        return
-      }
-    }
-  }
 }
 </script>

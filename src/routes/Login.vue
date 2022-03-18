@@ -10,7 +10,6 @@
 
 <script>
 export default {
-  name: "login",
   methods: {
     async login() {
       try {
