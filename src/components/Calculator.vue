@@ -52,15 +52,23 @@ export default {
     ...mapState('bmi', [
       'bmiShow',
     ]),
+    ...mapState('login', [
+      'user'
+    ]),
     date() {
-      return new Date()
+      const date = new Date()
+      const setDate = `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`
+      return setDate
     }
   },
   methods: {
     calculate() {
+      const bmi = Math.round(this.weight / (this.height * this.height) * 10000)
       this.$store.dispatch('bmi/caculate', {
+        userId: this.user.uid,
         height: this.height,
         weight: this.weight,
+        bmi,
         date: this.date
       })
     },

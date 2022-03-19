@@ -21,7 +21,6 @@ export default {
         commit('updateState', {
           user
         })
-        console.log(user)
       } catch (error) {
         window.alert('로그인에 실패했습니다. Error: ' + error)
       }

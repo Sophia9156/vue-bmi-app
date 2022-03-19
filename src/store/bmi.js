@@ -1,10 +1,12 @@
+import { database } from "../service/firebase";
+import { ref, set } from "firebase/database";
+
 export default {
   namespaced: true,
   state: () => ({
     height: '',
     weight: '',
     bmi: '',
-    date: '',
     bmiShow: false
   }),
   mutations: {
@@ -15,24 +17,28 @@ export default {
     }
   },
   actions: {
-    caculate({commit}, {height, weight, date}) {
+    caculate({commit}, {userId, height, weight, bmi, date}) {
       
-      if(height === '') {
+      if (height === '') {
         window.alert('키를 입력해주세요.')
         return
-      } else if(weight === '') {
+      } else if (weight === '') {
         window.alert('몸무게를 입력해주세요.')
         return
       } else {
-        const bmi = Math.round(weight / (height * height) * 10000, 1)
         commit('updateState', {
           height,
           weight,
           bmi,
-          date,
           bmiShow: true
         })
+        set(ref(database, `${userId}/${date}`), {
+          weight,
+          bmi,
+          date
+        })
       }
+
     }
   }
 }
