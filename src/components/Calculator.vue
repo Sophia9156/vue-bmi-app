@@ -149,4 +149,13 @@ export default {
     }
   }
 }
+
+/* xl = 1140px */
+@include media-breakpoint-down(xl) {}
+
+/* md = 704px */
+@include media-breakpoint-down(md) {}
+
+/* md = 540px */
+@include media-breakpoint-down(sm) {}
 </style>

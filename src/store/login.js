@@ -1,5 +1,6 @@
 import { auth, googleProvider } from '../service/firebase'
-import { signInWithPopup } from 'firebase/auth'
+import { signInWithRedirect, getRedirectResult } from 'firebase/auth'
+import router from '../routes'
 
 export default {
   namespaced: true,
@@ -15,14 +16,9 @@ export default {
     }
   },
   actions: {
-    async login({commit}) {
+    async login() {
       try {
-        const result = await signInWithPopup(auth, googleProvider);
-        const user = result.user
-        commit('updateState', {
-          user,
-          isLogin: true
-        })
+        await signInWithRedirect(auth, googleProvider);
       } catch (error) {
         window.alert('로그인에 실패했습니다. Error: ' + error)
       }
@@ -38,6 +34,17 @@ export default {
       } catch (error) {
         window.alert('로그아웃에 실패했습니다. Error: ' + error)
       }
+    },
+    checkLogin({commit}) {
+      getRedirectResult(auth)
+      .then(result => {
+        const user = result.user;
+        commit('updateState', {
+          user,
+          isLogin: true
+        })
+        router.push('/home')
+      })
     }
   }
 }

@@ -19,6 +19,10 @@ export default {
   },
   actions: {
     caculate({commit}, {userId, height, weight, bmi, date}) {
+      if(userId === null) {
+        window.alert('로그인 해주세요!')
+        return 
+      }
       
       if (height === '') {
         window.alert('키를 입력해주세요.')
@@ -50,7 +54,6 @@ export default {
           return {}
         }
       });
-      console.log(res)
       commit('updateState', {
         data: res
       })

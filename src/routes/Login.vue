@@ -10,15 +10,17 @@
 
 <script>
 export default {
+  created() {
+    this.$store.dispatch('login/checkLogin')
+  },
   methods: {
     async login() {
       try {
         await this.$store.dispatch('login/login')
-        this.$router.push('/home')
       } catch {
         return
       }
-    }
+    },
   }
 }
 </script>
@@ -57,6 +59,24 @@ export default {
       background-color: lighten($primary, 50%);
       color: darken($primary, 10%);
       border: 2px solid darken($primary, 10%);
+    }
+  }
+}
+
+/* md = 540px */
+@include media-breakpoint-down(sm) {
+  .login{
+    h1{
+      font-size: 3rem;
+    }
+    img{
+      width: 150px;
+      height: 150px;
+    }
+    .loginBtn{
+      padding: 15px 20px;
+      border-radius: 40px;
+      font-size: 1rem;
     }
   }
 }
