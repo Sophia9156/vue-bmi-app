@@ -4,7 +4,8 @@ import { signInWithPopup } from 'firebase/auth'
 export default {
   namespaced: true,
   state: () => ({
-    user: {}
+    user: {},
+    isLogin: false
   }),
   mutations: {
     updateState(prevState, newState) {
@@ -19,7 +20,8 @@ export default {
         const result = await signInWithPopup(auth, googleProvider);
         const user = result.user
         commit('updateState', {
-          user
+          user,
+          isLogin: true
         })
       } catch (error) {
         window.alert('로그인에 실패했습니다. Error: ' + error)
@@ -29,7 +31,8 @@ export default {
       try {
         await auth.signOut()
         commit('updateState', {
-          user: {}
+          user: {},
+          isLogin: false
         })
         window.alert('성공적으로 로그아웃 되었습니다!')
       } catch (error) {

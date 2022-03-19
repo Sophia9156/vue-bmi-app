@@ -1,16 +1,16 @@
 <template>
-  <Header />
   <Calculator />
+  <HealthGuide />
 </template>
 
 <script>
 import Calculator from '@/components/Calculator.vue'
-import Header from '@/components/Header.vue'
+import HealthGuide from '@/components/HealthGuide.vue'
 
 export default {
   components: {
-    Header,
     Calculator,
+    HealthGuide
   },
 }
 </script>

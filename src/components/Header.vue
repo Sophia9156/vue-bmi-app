@@ -4,6 +4,10 @@
       <img src="../assets/logo.png" alt="logo" />
       My BMI
     </h1>
+    <nav>
+      <RouterLink to="/home">HOME</RouterLink>
+      <RouterLink to="/chart">CHART</RouterLink>
+    </nav>
     <div class="user">
       <p>Welcome back! {{user.displayName}}</p>
       <img :src="user.photoURL" alt="user-image" />
@@ -51,6 +55,21 @@ header{
       height: 50px;
       margin-right: 20px;
       vertical-align: middle;
+    }
+  }
+  nav{
+    a{
+      display: inline-block;
+      margin: 0 10px;
+      padding: 5px 8px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #fff;
+      transition: .4s;
+      &:hover{
+        color: darken($primary, 30%);
+      }
     }
   }
   .user{

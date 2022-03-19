@@ -56,8 +56,9 @@ export default {
       'user'
     ]),
     date() {
+      const month = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
       const date = new Date()
-      const setDate = `${date.getFullYear()}${date.getMonth() + 1}${date.getDate()}`
+      const setDate = `${date.getFullYear()}${month[date.getMonth()]}${date.getDate()}`
       return setDate
     }
   },

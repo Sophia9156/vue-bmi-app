@@ -1,5 +1,5 @@
 import { database } from "../service/firebase";
-import { ref, set } from "firebase/database";
+import { ref, set, child, get } from "firebase/database";
 
 export default {
   namespaced: true,
@@ -7,7 +7,8 @@ export default {
     height: '',
     weight: '',
     bmi: '',
-    bmiShow: false
+    bmiShow: false,
+    data: {}
   }),
   mutations: {
     updateState(prevState, newState) {
@@ -39,6 +40,20 @@ export default {
         })
       }
 
-    }
+    },
+    async getData({commit}, {userId}) {
+      const dbRef = ref(database);
+      const res = await get(child(dbRef, `${userId}`)).then(snapshot => {
+        if (snapshot.exists()) {
+          return snapshot.val() 
+        } else {
+          return {}
+        }
+      });
+      console.log(res)
+      commit('updateState', {
+        data: res
+      })
+    },
   }
 }
