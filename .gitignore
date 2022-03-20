@@ -4,6 +4,8 @@ node_modules
 
 
 # local env files
+.env.development
+.env.production
 .env.local
 .env.*.local
 
@@ -21,3 +23,8 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# firebase
+.firebaserc
+.firebase.json
+database.rules.json

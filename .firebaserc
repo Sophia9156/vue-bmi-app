@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "vue-bmi-app"
+    "default": "vue-bmi-app",
+    "hosting": "vue-bmi-app"
   }
 }
