@@ -151,11 +151,74 @@ export default {
 }
 
 /* xl = 1140px */
-@include media-breakpoint-down(xl) {}
+@include media-breakpoint-down(xl) {
+  .title{
+    p{
+      width: 90%;
+    }
+  }
+  .calculator{
+    width: 70%;
+  }
+}
 
 /* md = 704px */
-@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(md) {
+  .title{
+    width: 90%;
+    margin: 40px auto;
+    h2{
+      font-size: 1.5rem;
+      .bmi-text{
+        font-size: 2rem;
+        vertical-align: middle;
+      }
+    }
+    p{
+      width: 80%;
+      font-size: 0.8rem;
+    }
+  }
+  .calculator{
+    width: 90%;
+    li{
+      font-size: 1rem;
+      button{
+        font-size: 1rem;
+      }
+    }
+  }
+}
 
 /* md = 540px */
-@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(sm) {
+  .title{
+    width: 90%;
+    margin: 30px auto;
+    h2{
+      font-size: 1.3rem;
+      .bmi-text{
+        font-size: 1.8rem;
+        vertical-align: middle;
+      }
+    }
+    p{
+      width: 90%;
+      font-size: 0.7rem;
+    }
+  }
+  .calculator{
+    width: 90%;
+    padding: 20px 0;
+    li{
+      font-size: 0.8rem;
+      input{
+        padding: 10px 15px;
+      }
+      button{
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
 </style>

@@ -116,8 +116,8 @@ header{
   }
 }
 
-/* xl = 1140px */
-@include media-breakpoint-down(xl) {
+/* lg = 924px */
+@include media-breakpoint-down(lg) {
   header{
     padding: 30px 5%;
     display: block;
@@ -161,7 +161,7 @@ header{
       }
       nav{
         a{
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
     }
@@ -169,14 +169,14 @@ header{
       margin-top: 10px;
       justify-content: flex-end;
       p{
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
       img{
         width: 20px;
         height: 20px;
       }
       .logout{
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
   }

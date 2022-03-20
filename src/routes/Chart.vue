@@ -6,7 +6,8 @@
         변화 추이
       </h2>
       <p>
-        2주 간의 몸무게와 BMI 변화 추이를 확인하세요!
+        2주 간의 몸무게와 BMI 변화 추이를 확인하세요! <br />
+        (최근 14개의 결과를 보여줍니다.)
       </p>
   </div>
     <div class="canvas">
@@ -126,4 +127,52 @@ export default {
   }
 }
 
+/* xl = 1140px */
+@include media-breakpoint-down(xl) {
+  .chart{
+    width: 80%;
+  }
+}
+
+/* md = 704px */
+@include media-breakpoint-down(md) {
+  .chart{
+    width: 90%;
+    margin: 40px auto;
+    .title{
+      h2{
+        font-size: 1.5rem;
+        .bmi-text{
+          font-size: 2rem;
+          vertical-align: middle;
+        }
+      }
+      p{
+        width: 80%;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+/* md = 540px */
+@include media-breakpoint-down(sm) {
+  .chart{
+    width: 90%;
+    margin: 30px auto;
+    .title{
+      h2{
+        font-size: 1.3rem;
+        .bmi-text{
+          font-size: 1.8rem;
+          vertical-align: middle;
+        }
+      }
+      p{
+        width: 80%;
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
 </style>

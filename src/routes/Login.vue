@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  created() {
+  beforeCreate() {
     this.$store.dispatch('login/checkLogin')
   },
   methods: {

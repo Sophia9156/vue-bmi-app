@@ -62,6 +62,7 @@ export default {
     align-items: center;
     border-radius: 10px;
     overflow: hidden;
+    font-size: 1rem;
     span{
       height: 100%;
       display: flex;
@@ -87,6 +88,51 @@ export default {
       flex: 0.4;
       background-color: darken($primary, 30%);
       color: lighten($primary, 10%);
+    }
+  }
+}
+
+/* xl = 1140px */
+@include media-breakpoint-down(xl) {
+  .result{
+    .barometer{
+      width: 90%;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* md = 704px */
+@include media-breakpoint-down(md) {
+  .result{
+    width: 90%;
+    h2{
+      font-size: 1.5rem;
+    }
+    h3{
+      font-size: 1.2rem;
+    }
+    .barometer{
+      width: 90%;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+/* md = 540px */
+@include media-breakpoint-down(sm) {
+  .result{
+    width: 90%;
+    padding: 20px 0;
+    h2{
+      font-size: 1.3rem;
+    }
+    h3{
+      font-size: 1.1rem;
+    }
+    .barometer{
+      width: 90%;
+      font-size: 0.3rem;
     }
   }
 }

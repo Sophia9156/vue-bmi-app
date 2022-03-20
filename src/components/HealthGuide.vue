@@ -46,12 +46,75 @@ export default {
     margin: 0 auto;
     li{
       padding: 15px 0;
+      list-style: none;
       dt{
         margin-bottom: 10px;
         font-size: 1.1rem;
       }
       dd{
         font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* xl = 1140px */
+@include media-breakpoint-down(xl) {
+  .guide{
+    width: 90%;
+    h2{
+      margin: 30px auto;
+      font-size: 2rem;
+    }
+    .guideList{
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+/* md = 704px */
+@include media-breakpoint-down(md) {
+  .guide{
+    width: 90%;
+    h2{
+      margin: 30px auto;
+      font-size: 1.5rem;
+    }
+    .guideList{
+      width: 90%;
+      margin: 0 auto;
+      li{
+        dt{
+          font-size: 1rem;
+        }
+        dd{
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+/* md = 540px */
+@include media-breakpoint-down(sm) {
+  .guide{
+    width: 90%;
+    h2{
+      margin: 20px auto;
+      font-size: 1.3rem;
+    }
+    .guideList{
+      width: 95%;
+      padding: 0;
+      li{
+        margin: 0;
+        dt{
+          font-size: 0.9rem;
+        }
+        dd{
+          font-size: 0.8rem;
+        }
       }
     }
   }
